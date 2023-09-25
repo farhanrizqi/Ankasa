@@ -187,7 +187,9 @@ export default function profile() {
                     />
                   </svg>
                 </div>
-                <h1 className="text-md font-bold ml-5 text-red">Logout</h1>
+                <h1 className="text-md font-bold ml-5 text-customRed">
+                  Logout
+                </h1>
               </div>
               <div>
                 <svg

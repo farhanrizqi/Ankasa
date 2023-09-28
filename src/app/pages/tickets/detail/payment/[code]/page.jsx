@@ -4,13 +4,66 @@ import Image from "next/image";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import visa from "@/../../public/images/visa.svg";
-import { useRouter } from "next/navigation";
+import axios from "axios";
+import { useRouter, useParams } from "next/navigation";
 
 export default function detailTicket() {
   const router = useRouter();
+  const params = useParams();
+  const code = params.code;
+  const [loading, setLoading] = useState(false);
 
-  const handleSelect = () => {
-    router.push("/pages/bookings/pass");
+  const handleProcess = async () => {
+    try {
+      setLoading(true);
+      const response = await axios.put(
+        `${process.env.NEXT_PUBLIC_API_URL}booking/status/${code}`,
+        { statusId: 2 }
+      );
+      if (response.status === 200) {
+        router.push(`/pages/bookings/pass/${code}`);
+      } else {
+        console.error("Failed to process payment.");
+      }
+    } catch (error) {
+      console.error("Error Processing Payment:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleCancel = async () => {
+    try {
+      const confirmationResult = await Swal.fire({
+        title: "Confirm",
+        text: "Are you sure you want to cancel the payment ?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#F24545",
+        cancelButtonColor: "#979797",
+        confirmButtonText: "Yes, cancel",
+      });
+
+      if (confirmationResult.isConfirmed) {
+        setLoading(true);
+
+        const response = await axios.put(
+          `${process.env.NEXT_PUBLIC_API_URL}booking/status/${code}`,
+          { statusId: 3 }
+        );
+
+        if (response.status === 200) {
+          await Swal.fire("Canceled", "Payment Cancelled.", "success");
+          router.push(`/pages/profile`);
+        } else {
+          console.error("Failed to cancel payment.");
+        }
+      }
+    } catch (error) {
+      console.error("Error canceling payment:", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -242,14 +295,59 @@ export default function detailTicket() {
               <div className="flex flex-col justify-center items-center">
                 <div
                   className="flex w-full md:w-60 h-14  bg-primary items-center justify-center rounded-md hover:bg-blue-600 cursor-pointer shadow-lg shadow-blue-500/50 mt-6"
-                  onClick={handleSelect}
+                  onClick={handleProcess}
                 >
-                  <h1 className="text-white text-sm font-medium">
-                    Try it free for 30 days
-                  </h1>
+                  {loading ? (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      className="w-full flex justify-center items-center"
+                    >
+                      <circle cx="18" cy="12" r="0" fill="white">
+                        <animate
+                          attributeName="r"
+                          begin=".67"
+                          calcMode="spline"
+                          dur="1.5s"
+                          keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
+                          repeatCount="indefinite"
+                          values="0;2;0;0"
+                        />
+                      </circle>
+                      <circle cx="12" cy="12" r="0" fill="white">
+                        <animate
+                          attributeName="r"
+                          begin=".33"
+                          calcMode="spline"
+                          dur="1.5s"
+                          keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
+                          repeatCount="indefinite"
+                          values="0;2;0;0"
+                        />
+                      </circle>
+                      <circle cx="6" cy="12" r="0" fill="white">
+                        <animate
+                          attributeName="r"
+                          begin="0"
+                          calcMode="spline"
+                          dur="1.5s"
+                          keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8"
+                          repeatCount="indefinite"
+                          values="0;2;0;0"
+                        />
+                      </circle>
+                    </svg>
+                  ) : (
+                    <h1 className="text-white text-sm font-medium">Proceed</h1>
+                  )}
                 </div>
-                <h1 className=" text-primary text-xs underline mt-2 text-center">
-                  Have a promo code?
+                <h1
+                  className="text-xs underline mt-2 text-center text-customRed cursor-pointer"
+                  onClick={handleCancel}
+                >
+                  Cancel
                 </h1>
               </div>
             </div>

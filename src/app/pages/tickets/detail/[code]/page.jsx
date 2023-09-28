@@ -339,7 +339,7 @@ export default function detailTicket() {
                     </label>
                     <select
                       name="title"
-                      className="w-full focus:outline-none p-4 font-semibold text-md "
+                      className="focus:outline-none p-4 font-semibold text-md bg-red-200"
                       disabled={isPassenger}
                       value={passengerDetails.title2}
                       onChange={(e) =>
@@ -350,7 +350,7 @@ export default function detailTicket() {
                       }
                     >
                       <option value={"Mr."}>Mr.</option>
-                      <option value={"Mr."}>Ms.</option>
+                      <option value={"Ms."}>Ms.</option>
                     </select>
                   </div>
                   <div className="hidden lg:flex w-full flex-col">
@@ -438,7 +438,7 @@ export default function detailTicket() {
             </div>
             <div className="mt-3 flex">
               <button
-                className="block flex-1 px-4 py-2 font-bold bg-primary border border-primary rounded-lg text-white text-bold hover:text-primary hover:border-primary hover:bg-white"
+                className="block flex-1 px-4 py-2 font-bold bg-primary border border-primary rounded-lg text-white hover:text-primary hover:bg-white"
                 onClick={handlePayment}
               >
                 {loading ? (
@@ -447,6 +447,7 @@ export default function detailTicket() {
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
+                    className="w-full flex justify-center items-center"
                   >
                     <circle cx="18" cy="12" r="0" fill="white">
                       <animate
@@ -483,7 +484,7 @@ export default function detailTicket() {
                     </circle>
                   </svg>
                 ) : (
-                  <h1 className="text-white text-sm font-medium">
+                  <h1 className="text-white text-sm font-medium hover:text-primary">
                     Proceed to Payment
                   </h1>
                 )}
@@ -514,7 +515,7 @@ export default function detailTicket() {
                     </h1>
                   </div>
                   {isFlightData && isFlightData.from && isFlightData.to && (
-                    <div className="flex gap-3 mt-4 items-center md:w-48 lg:w-72 md:justify-between">
+                    <div className="flex gap-3 mt-4 items-center md:w-48 lg:w-full md:justify-between">
                       <h1 className="font-poppins font-semibold text-md">
                         {isFlightData.from.location}
                       </h1>
@@ -643,6 +644,7 @@ export default function detailTicket() {
               </div>
             </div>
           </div>
+
           {/* Mobile Menu */}
           <div className="flex justify-between items-center relative bottom-24 px-5 md:hidden ">
             <div className="flex items-center">
@@ -1067,7 +1069,7 @@ export default function detailTicket() {
             </div>
             <div className="mt-3 flex">
               <button
-                className="block flex-1 px-4 py-2 font-bold bg-primary border border-primary rounded-lg text-white text-bold hover:text-primary hover:border-primary hover:bg-white"
+                className="block flex-1 px-4 py-2 font-bold bg-primary border border-primary rounded-lg text-white hover:text-primary hover:border-primary hover:bg-white"
                 onClick={handlePayment}
               >
                 {loading ? (

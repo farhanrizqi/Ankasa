@@ -17,43 +17,38 @@ export default function tickets() {
   const [isLoading, setIsLoading] = useState(true);
   const [sortData, setSortData] = useState(false);
   const [initialData, setInitialData] = useState([]);
-  const [filtersTransit, setFiltersTransit] = useState({
-    direct: false,
-    transit: false,
-    transit2plus: false,
-  });
-  const [filtersFacilities, setFiltersFacilities] = useState({
-    baggage: false,
-    meal: false,
-    wifi: false,
+  const [transitFilters, setTransitFilters] = useState({
+    Direct: false,
+    Transit: false,
+    "Transit 2+": false,
   });
 
-  const [filtersDepartureTime, setFiltersDepartureTime] = useState({
-    "0-6": false,
-    "6-12": false,
-    "12-18": false,
-    "18-24": false,
+  const [facilitiesFilters, setFacilitiesFilters] = useState({
+    Luggage: false,
+    "In-Flight Meal": false,
+    Wifi: false,
+  });
+  const [departureFilters, setDepartureFilters] = useState({
+    "00:00 - 06:00": false,
+    "06:00 - 12:00": false,
+    "12:00 - 18:00": false,
+    "18:00 - 24:00": false,
+  });
+  const [arriveFilters, setArriveFilters] = useState({
+    "00:00 - 06:00": false,
+    "06:00 - 12:00": false,
+    "12:00 - 18:00": false,
+    "18:00 - 24:00": false,
+  });
+  const [airlineFilters, setAirlineFilters] = useState({
+    "Garuda Indonesia": false,
+    "Air Asia": false,
+    "Lion Air": false,
+    "Singapore Airlines": false,
+    Citilink: false,
   });
 
-  const [filtersArrivalTime, setFiltersArrivalTime] = useState({
-    "0-6": false,
-    "6-12": false,
-    "12-18": false,
-    "18-24": false,
-  });
-
-  const [filtersAirlines, setFiltersAirlines] = useState({
-    garudaId: false,
-    airAsia: false,
-    lionAir: false,
-    singaporeAirlines: false,
-    Citylink: false,
-  });
   const [priceRange, setPriceRange] = useState({ min: 0, max: 1000 });
-  const [priceRangeMobile, setPriceRangeMobile] = useState({
-    min: 0,
-    max: 1000,
-  });
 
   const toggleMobileFilter = () => {
     setIsMobileFilterOpen(!isMobileFilterOpen);
@@ -104,180 +99,6 @@ export default function tickets() {
   const sortedFlightData = sortData
     ? flightData.slice().reverse()
     : [...flightData];
-
-  //! toggle filter
-
-  const toggleFilter = (filterName) => {
-    setFiltersTransit((prevFilters) => ({
-      ...prevFilters,
-      [filterName]: !prevFilters[filterName],
-    }));
-  };
-
-  const toggleFilterFacilities = (filterName) => {
-    setFiltersFacilities((prevFilters) => ({
-      ...prevFilters,
-      [filterName]: !prevFilters[filterName],
-    }));
-  };
-
-  const toggleFilterDeparture = (filterName) => {
-    setFiltersDepartureTime((prevFilters) => ({
-      ...prevFilters,
-      [filterName]: !prevFilters[filterName],
-    }));
-  };
-
-  const toggleFilterArrival = (filterName) => {
-    setFiltersArrivalTime((prevFilters) => ({
-      ...prevFilters,
-      [filterName]: !prevFilters[filterName],
-    }));
-  };
-
-  const toggleFilterAirlines = (filterName) => {
-    setFiltersAirlines((prevFilters) => ({
-      ...prevFilters,
-      [filterName]: !prevFilters[filterName],
-    }));
-  };
-
-  // ! toggle filter end
-
-  // ! FILTER DATA START
-  // data filter
-
-  const filteredData = sortedFlightData.filter((flight) => {
-    let isFlightMatched = true;
-
-    if (
-      !filtersTransit.direct &&
-      !filtersTransit.transit &&
-      !filtersTransit.transit2plus
-    ) {
-    } else {
-      if (
-        !(
-          (filtersTransit.direct && flight.transit === 0) ||
-          (filtersTransit.transit && flight.transit === 1) ||
-          (filtersTransit.transit2plus && flight.transit >= 2)
-        )
-      ) {
-        isFlightMatched = false;
-      }
-    }
-
-    if (
-      !filtersFacilities.baggage &&
-      !filtersFacilities.meal &&
-      !filtersFacilities.wifi
-    ) {
-    } else {
-      const selectedFacilities = [];
-
-      if (filtersFacilities.baggage) selectedFacilities.push("baggage");
-      if (filtersFacilities.meal) selectedFacilities.push("meal");
-      if (filtersFacilities.wifi) selectedFacilities.push("wifi");
-
-      if (
-        !selectedFacilities.every((facility) =>
-          flight.facilities.includes(facility)
-        )
-      ) {
-        isFlightMatched = false;
-      }
-    }
-
-    if (
-      !filtersDepartureTime["0-6"] &&
-      !filtersDepartureTime["6-12"] &&
-      !filtersDepartureTime["12-18"] &&
-      !filtersDepartureTime["18-24"]
-    ) {
-    } else {
-      const flightDepartureHour = parseInt(flight.takeoffTime.split(":")[0]);
-
-      if (
-        (filtersDepartureTime["0-6"] &&
-          flightDepartureHour >= 0 &&
-          flightDepartureHour < 6) ||
-        (filtersDepartureTime["6-12"] &&
-          flightDepartureHour >= 6 &&
-          flightDepartureHour < 12) ||
-        (filtersDepartureTime["12-18"] &&
-          flightDepartureHour >= 12 &&
-          flightDepartureHour < 18) ||
-        (filtersDepartureTime["18-24"] && flightDepartureHour >= 18)
-      ) {
-      } else {
-        isFlightMatched = false;
-      }
-    }
-
-    if (
-      !filtersArrivalTime["0-6"] &&
-      !filtersArrivalTime["6-12"] &&
-      !filtersArrivalTime["12-18"] &&
-      !filtersArrivalTime["18-24"]
-    ) {
-    } else {
-      const flightArrivalHour = parseInt(flight.landingTime.split(":")[0]);
-
-      if (
-        (filtersArrivalTime["0-6"] &&
-          flightArrivalHour >= 0 &&
-          flightArrivalHour < 6) ||
-        (filtersArrivalTime["6-12"] &&
-          flightArrivalHour >= 6 &&
-          flightArrivalHour < 12) ||
-        (filtersArrivalTime["12-18"] &&
-          flightArrivalHour >= 12 &&
-          flightArrivalHour < 18) ||
-        (filtersArrivalTime["18-24"] && flightArrivalHour >= 18)
-      ) {
-      } else {
-        isFlightMatched = false;
-      }
-    }
-
-    if (
-      !filtersAirlines.garudaId &&
-      !filtersAirlines.airAsia &&
-      !filtersAirlines.lionAir &&
-      !filtersAirlines.singaporeAirlines &&
-      !filtersAirlines.Citylink
-    ) {
-    } else {
-      const selectedAirlines = [];
-
-      if (filtersAirlines.garudaId) selectedAirlines.push("Garuda Indonesia");
-      if (filtersAirlines.airAsia) selectedAirlines.push("AirAsia Indonesia");
-      if (filtersAirlines.lionAir) selectedAirlines.push("Lion Air");
-      if (filtersAirlines.singaporeAirlines)
-        selectedAirlines.push("Singapore Airlines");
-      if (filtersAirlines.Citylink) selectedAirlines.push("Citilink");
-
-      if (!selectedAirlines.includes(flight.name)) {
-        isFlightMatched = false;
-      }
-    }
-
-    if (flight.price < priceRange.min || flight.price > priceRange.max) {
-      return false;
-    }
-
-    if (
-      flight.price < priceRangeMobile.min ||
-      flight.price > priceRangeMobile.max
-    ) {
-      return false;
-    }
-
-    return isFlightMatched;
-  });
-  // ! FILTER DATA END
-
-  console.log(Array.isArray(flightData));
 
   const handleSelectTicket = () => {
     router.push("/pages/tickets/detail");

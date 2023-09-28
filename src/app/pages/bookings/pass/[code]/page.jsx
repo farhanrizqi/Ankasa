@@ -1,21 +1,127 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
-import visa from "@/../../public/images/visa.svg";
 import garuda from "@/../../public/images/garuda.png";
 import barcode from "@/../../public/images/barcode.png";
-import { useRouter } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
+import axios from "axios";
+import Cookies from "js-cookie";
+import Barcode from "react-barcode";
+import { SelectContext } from "@material-tailwind/react/components/Select/SelectContext";
 
-export default function detailTicket() {
+const token = Cookies.get("token");
+
+export default function pass() {
   const router = useRouter();
+  const params = useParams();
+  const code = params.code;
+  const [tab, setTab] = useState(false);
+  const [dataTicket, setDataTicket] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [codeBar, setCodeBar] = useState("");
+
+  useEffect(() => {
+    setIsLoading(true);
+    axios
+      .get(`${process.env.NEXT_PUBLIC_API_URL}booking/tickets/${code}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        const data = response.data.data;
+        // console.log(data);
+
+        const flight = data.result.ticket;
+        const takeoffTime = flight.takeoff.substr(11, 5);
+        const landingTime = flight.landing.substr(11, 5);
+        const takeoffDate = flight.takeoff.substr(0, 10);
+        const landingDate = flight.landing.substr(0, 10);
+
+        const takeoffHour = parseInt(takeoffTime.split(":")[0]);
+        const takeoffMinute = parseInt(takeoffTime.split(":")[1]);
+        const landingHour = parseInt(landingTime.split(":")[0]);
+        const landingMinute = parseInt(landingTime.split(":")[1]);
+
+        const hours = landingHour - takeoffHour;
+        const minutes = landingMinute - takeoffMinute;
+
+        const formattedTimeDistance = `${hours} hours ${minutes} minutes`;
+
+        const takeoffDateTime = new Date(takeoffDate);
+        const landingDateTime = new Date(landingDate);
+        const options = {
+          weekday: "long",
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+        };
+        const formattedTakeoffDate = takeoffDateTime.toLocaleDateString(
+          "en-US",
+          options
+        );
+        const formattedLandingDate = landingDateTime.toLocaleDateString(
+          "en-US",
+          options
+        );
+
+        const modifiedData = {
+          ...data,
+          takeoffTime,
+          landingTime,
+          takeoffDate: formattedTakeoffDate,
+          landingDate: formattedLandingDate,
+          timeDistance: formattedTimeDistance,
+        };
+
+        setDataTicket(modifiedData);
+        setIsLoading(false);
+        setCodeBar(response.data.data.result.ticket.code);
+        // console.log(response.data.data.result.ticket.code);
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+        setIsLoading(false);
+      });
+  }, []);
+
+  console.log(dataTicket);
+
+  // const ticketCode = dataTicket?.result?.ticket?.code;
+  // setCodeBar(ticketCode);
+
+  const dataClass = () => {
+    const price = dataTicket?.result?.ticket?.price;
+    let result = "";
+
+    if (price <= 200) {
+      return (result = "Economy");
+    } else if (price >= 200) {
+      return (result = "Business");
+    } else if (price >= 500) {
+      return (result = "First Class");
+    }
+  };
+
+  const handleTab = () => {
+    if (tab) {
+      setTab(false);
+    } else {
+      setTab(true);
+    }
+  };
+
+  const handleBack = () => {
+    router.push("/");
+  };
 
   return (
     <>
       <Navbar />
       <div className="w-full h-auto p-5 bg-primary lg:px-10 lg:py-5 ">
-        <div className="w-full h-auto p-5 flex flex-col justify-center  bg-white rounded-xl ">
+        <div className="w-full h-auto p-5 flex flex-col justify-center bg-white rounded-xl">
           <div className="w-full flex justify-between md:mb-0">
             <div>
               <h1 className="font-semibold text-md">Booking Pass</h1>
@@ -39,11 +145,26 @@ export default function detailTicket() {
               <div className="w-full p-3">
                 <div className="flex">
                   <div>
-                    <Image src={garuda} width={70} />
+                    <Image
+                      src={dataTicket?.result?.ticket?.airline?.photo}
+                      width={60}
+                      height={30}
+                      alt="Airline"
+                      className="md:hidden"
+                    />
+                    <Image
+                      src={dataTicket?.result?.ticket?.airline?.photo}
+                      width={200}
+                      height={100}
+                      alt="Airline"
+                      className="hidden md:block"
+                    />
                   </div>
                   <div className="w-full flex justify-center items-center space-x-5 ">
                     <div>
-                      <h1 className="font-bold text-md">IDN</h1>
+                      <h1 className="font-bold text-md lg:text-xl">
+                        {dataTicket?.result?.ticket?.from?.code}
+                      </h1>
                     </div>
                     <div>
                       <svg
@@ -60,76 +181,94 @@ export default function detailTicket() {
                       </svg>
                     </div>
                     <div>
-                      <h1 className="font-bold text-md">JPN</h1>
+                      <h1 className="font-bold text-md lg:text-xl">
+                        {dataTicket?.result?.ticket?.to?.code}
+                      </h1>
                     </div>
                   </div>
                 </div>
                 <div className="flex mt-5">
                   <div className="flex-1">
                     <div>
-                      <h1 className="text-xs text-eighth">Code</h1>
+                      <h1 className="text-xs text-eighth lg:text-lg">Code</h1>
                     </div>
                     <div>
-                      <h1 className="text-xs">AB-221</h1>
+                      <h1 className="text-xs lg:text-lg">{`${dataTicket?.result?.ticket?.from?.code}-${dataTicket?.result?.id}`}</h1>
                     </div>
                   </div>
                   <div className="flex-1">
                     <div>
-                      <h1 className="text-xs text-eighth">Class</h1>
+                      <h1 className="text-xs text-eighth lg:text-lg">Class</h1>
                     </div>
                     <div>
-                      <h1 className="text-xs">Economy</h1>
+                      <h1 className="text-xs lg:text-lg">{dataClass()}</h1>
                     </div>
                   </div>
                 </div>
                 <div className="flex mt-5">
                   <div className="flex-1">
                     <div>
-                      <h1 className="text-xs text-eighth">Terminal</h1>
+                      <h1 className="text-xs text-eighth lg:text-lg">
+                        Terminal
+                      </h1>
                     </div>
                     <div>
-                      <h1 className="text-xs">A</h1>
+                      <h1 className="text-xs lg:text-lg">
+                        {dataTicket?.result?.ticket?.from?.terminal}
+                      </h1>
                     </div>
                   </div>
                   <div className="flex-1">
                     <div>
-                      <h1 className="text-xs text-eighth">Gate</h1>
+                      <h1 className="text-xs text-eighth lg:text-lg">Gate</h1>
                     </div>
                     <div>
-                      <h1 className="text-xs">221</h1>
+                      <h1 className="text-xs lg:text-lg">
+                        {dataTicket?.result?.ticket?.airlineId}
+                      </h1>
                     </div>
                   </div>
                 </div>
                 <div className="mt-5">
                   <div>
                     <div>
-                      <h1 className="text-xs text-eighth">Departure</h1>
+                      <h1 className="text-xs text-eighth lg:text-lg">
+                        Departure
+                      </h1>
                     </div>
                     <div>
-                      <h1 className="text-xs">Monday, 20 July ‘20 - 12:33</h1>
+                      <h1 className="text-xs lg:text-lg">{`${dataTicket.takeoffDate} - ${dataTicket.takeoffTime}`}</h1>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div className="border-t-2 border-dashed md:border-l-2 md:mt-5"></div>
-            <div className="w-full h-auto p-5 border-b-2 border-x-2 rounded-b-lg md:w-1/3 md:mt-5 md:flex md:p-0 md:rounded-b-none md:border-r-2 md:border-y-2 md:rounded-r-lg md:border-t-none md:rounded-t-none ">
+            <div className="w-full h-auto p-5 border-b-2 border-x-2 rounded-b-lg md:w-1/3 md:mt-5 md:flex md:p-0 md:rounded-b-none md:border-r-2 md:border-y-2 md:rounded-r-lg md:border-t-none md:rounded-t-none lg:h-auto">
               <div className="w-full flex flex-col justify-center items-center md:-rotate-90 ">
-                <div className="flex justify-center">
-                  <Image src={barcode} width={70} />
-                  <Image src={barcode} width={70} />
-                  <Image src={barcode} width={70} />
+                <div className="flex justify-center ">
+                  <Barcode
+                    value={codeBar}
+                    width={0.8}
+                    background={"transparent"}
+                    font="Poppins"
+                    fontOptions="uppercase"
+                    fontSize="8px"
+                    textMargin={15}
+                  />
                 </div>
-                <div className="w-full">
-                  <h1 className="text-xs writing-vertical text-center">
-                    1234 5678 90AS 6543 21CV
+                {/* <div className="w-full">
+                  <h1 className="text-xs writing-vertical text-center uppercase">
+                    {dataTicket?.result?.ticket?.code}
                   </h1>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
         </div>
       </div>
+      {/* <Barcode value={codeBar} /> */}
+
       <Footer />
     </>
   );

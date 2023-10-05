@@ -98,6 +98,28 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- SCREENSHOTS -->
+## Screenshots
+| Login Page | Home |
+| ------------- | ------------- |
+| [![login.png](https://res.cloudinary.com/ddrecezrk/image/upload/v1696487283/ankasa/ijfmef1qm6zwsgjpaj6o.png)](https://res.cloudinary.com/ddrecezrk/image/upload/v1696487283/ankasa/ijfmef1qm6zwsgjpaj6o.png) | [![home.png](https://res.cloudinary.com/ddrecezrk/image/upload/v1696487285/ankasa/jsgx4pkufy4ylvlepde0.png)](https://res.cloudinary.com/ddrecezrk/image/upload/v1696487285/ankasa/jsgx4pkufy4ylvlepde0.png)
+
+| Landing Page | Detail Page |
+| :---: | :---: |
+| [![Landing.png](https://res.cloudinary.com/dcpi3m2up/image/upload/v1695721142/samples/Ankasa/w-landingpage_ahmzhc.png)](https://res.cloudinary.com/dcpi3m2up/image/upload/v1695721142/samples/Ankasa/w-landingpage_ahmzhc.png) | [![detail.png](https://res.cloudinary.com/dcpi3m2up/image/upload/v1695721124/samples/Ankasa/w-details_wkqmn5.png)](https://res.cloudinary.com/dcpi3m2up/image/upload/v1695721124/samples/Ankasa/w-details_wkqmn5.png) |
+
+| Landing Page Login | Search Page |
+| :---: | :---: |
+| [![landinglogin.png](https://res.cloudinary.com/dcpi3m2up/image/upload/v1695721135/samples/Ankasa/W-landingpagelogin_f8cj22.png)](https://res.cloudinary.com/dcpi3m2up/image/upload/v1695721135/samples/Ankasa/W-landingpagelogin_f8cj22.png) | [![Search.png](https://res.cloudinary.com/dcpi3m2up/image/upload/v1695721141/samples/Ankasa/w-search_hybudu.png)](https://res.cloudinary.com/dcpi3m2up/image/upload/v1695721141/samples/Ankasa/w-search_hybudu.png) |
+
+| Payment Page | Profile Page |
+| :---: | :---: |
+| [![payment.png](https://res.cloudinary.com/dcpi3m2up/image/upload/v1695721128/samples/Ankasa/w-payment_fabcin.png)](https://res.cloudinary.com/dcpi3m2up/image/upload/v1695721128/samples/Ankasa/w-payment_fabcin.png) | [![Profile.png](https://res.cloudinary.com/dcpi3m2up/image/upload/v1695721129/samples/Ankasa/w-profilebooking_oqxkdo.png)](https://res.cloudinary.com/dcpi3m2up/image/upload/v1695721129/samples/Ankasa/w-profilebooking_oqxkdo.png) |
+
+| Pass Page | Pass Page with Modal |
+| :---: | :---: |
+| [![pass.png](https://res.cloudinary.com/dcpi3m2up/image/upload/v1695721131/samples/Ankasa/w-pass_nklfo1.png)](https://res.cloudinary.com/dcpi3m2up/image/upload/v1695721131/samples/Ankasa/w-pass_nklfo1.png) | [![passmodal.png](https://res.cloudinary.com/dcpi3m2up/image/upload/v1695721125/samples/Ankasa/w-booking_ux0xir.png)](https://res.cloudinary.com/dcpi3m2up/image/upload/v1695721125/samples/Ankasa/w-booking_ux0xir.png) |
+
 <!-- GETTING STARTED -->
 
 ## Getting Started

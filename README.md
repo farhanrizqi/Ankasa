@@ -82,7 +82,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][ss-home]](https://res.cloudinary.com/ddrecezrk/image/upload/v1696487285/ankasa/jsgx4pkufy4ylvlepde0.png)
 
 Ankasa is a web-based project that allows users to search for tickets according to their goals, built using Next.js technology, Tailwind CSS Axios. I am responsible for integrating from the Frontend to the Backend which has been created by the mentor to create this Ankasa Ticketing application.
 
@@ -227,7 +227,7 @@ Use this space to list resources you find helpful and would like to give credit 
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
+[ss-home]: https://res.cloudinary.com/ddrecezrk/image/upload/v1696487285/ankasa/jsgx4pkufy4ylvlepde0.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB

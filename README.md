@@ -97,6 +97,30 @@ Ankasa is a web-based project that allows users to search for tickets according 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- Screenshots -->
+
+## Screenshot
+
+| Home Page            | Login Page             |
+| -------------------- | ---------------------- |
+| ![Home.png][ss-home] | ![Login.png][ss-login] |
+
+|       Ticket Page        |        Booking Page        |
+| :----------------------: | :------------------------: |
+| ![Ticket.png][ss-ticket] | ![Booking.png][ss-booking] |
+
+|    Detail Flight Page    |        Payment Page        |
+| :----------------------: | :------------------------: |
+| ![Detail.png][ss-detail] | ![Payment.png][ss-payment] |
+
+|  Boarding Pass Page  |
+| :------------------: |
+| ![Pass.png][ss-pass] |
+
+|       Logout Page        |
+| :----------------------: |
+| ![logout.png][ss-logout] |
+
 <!-- GETTING STARTED -->
 
 ## Getting Started
@@ -224,6 +248,15 @@ Project Link: [https://github.com/farhanrizqi/Ankasa](https://github.com/farhanr
 <!-- images section -->
 
 [ss-home]: https://res.cloudinary.com/ddrecezrk/image/upload/v1696487285/ankasa/jsgx4pkufy4ylvlepde0.png
+[ss-home]: https://res.cloudinary.com/ddrecezrk/image/upload/v1696487285/ankasa/jsgx4pkufy4ylvlepde0.png
+[ss-booking]: https://res.cloudinary.com/ddrecezrk/image/upload/v1696514716/ankasa/booking_bemr41.png
+[ss-ticket]: https://res.cloudinary.com/ddrecezrk/image/upload/v1696515504/ankasa/ticket_cx5mtc.png
+[ss-pass]: https://res.cloudinary.com/ddrecezrk/image/upload/v1696514715/ankasa/pass_svcphc.png
+[ss-payment]: https://res.cloudinary.com/ddrecezrk/image/upload/v1696514715/ankasa/payment_lhalq3.png
+[ss-profile]: https://res.cloudinary.com/ddrecezrk/image/upload/v1696514715/ankasa/profile_ovp1p4.png
+[ss-detail]: https://res.cloudinary.com/ddrecezrk/image/upload/v1696515504/ankasa/detail_lltkrt.png
+[ss-logout]: https://res.cloudinary.com/ddrecezrk/image/upload/v1696514715/ankasa/logout_l36jsc.png
+[ss-login]: https://res.cloudinary.com/ddrecezrk/image/upload/v1696487283/ankasa/ijfmef1qm6zwsgjpaj6o.png
 
 <!-- built section -->
 

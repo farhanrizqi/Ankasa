@@ -339,7 +339,7 @@ export default function detailTicket() {
                     </label>
                     <select
                       name="title"
-                      className="focus:outline-none p-4 font-semibold text-md bg-red-200"
+                      className="focus:outline-none p-4 font-semibold text-md"
                       disabled={isPassenger}
                       value={passengerDetails.title2}
                       onChange={(e) =>

@@ -209,7 +209,7 @@ export default function profile() {
           </div>
         </div>
         <div className="lg:flex lg:flex-col w-full lg:items-start ">
-          <div className="Right w-full h-auto bg-white rounded-2xl p-7 flex flex-col items-center mt-5 lg:mt-0 lg:p-8 lg:ml-3 lg:h-auto">
+          <div className="Right w-full h-auto  rounded-2xl p-7 flex flex-col items-center mt-5 lg:mt-0 lg:p-8 lg:mx-0 lg:h-auto bg-red-200">
             <h1 className="w-full text-xl text-left font-bold text-primary lg:text-3xl">
               My Booking
             </h1>
@@ -218,7 +218,7 @@ export default function profile() {
               <h1 className="text-md font-bold text-primary">Order History</h1>
             </div>
           </div>
-          <div className="Right w-full h-auto bg-white rounded-2xl flex flex-col items-center mt-5 lg:p-8 lg:ml-3 lg:h-auto lg:mt-3">
+          <div className="Right w-full h-auto bg-white rounded-2xl p-7 flex flex-col items-center mt-5 lg:p-8 lg:ml-3 lg:h-auto lg:mt-3">
             <div className="w-full flex flex-col p-7 items-start">
               <h1>Monday, 20 July ‘20 - 12:33</h1>
               <div className="flex items-center gap-8 mt-3">

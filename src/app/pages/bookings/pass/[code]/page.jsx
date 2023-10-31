@@ -114,7 +114,7 @@ export default function pass() {
   };
 
   const handleBooking = () => {
-    router.push("/pages/bookings");
+    router.push("/pages/profile");
   };
 
   return (

@@ -106,7 +106,7 @@ export default function profile() {
           (confirm) => {
             if (confirm) {
               Cookies.remove("token");
-              router.push("/login");
+              router.push("/pages/login");
             }
           }
         );
@@ -508,7 +508,7 @@ export default function profile() {
               </div>
             ) : (
               <div className="Right w-full h-auto bg-white rounded-2xl p-7 flex flex-col items-center mt-5 lg:mt-0 lg:p-8 lg:ml-3 lg:h-auto">
-                <div className="Right w-full h-auto bg-white rounded-2xl p-7 flex flex-col items-center mt-5 lg:mt-0 lg:p-8 lg:ml-3 lg:h-auto">
+                <div className="Right w-full h-auto bg-white rounded-2xl p-7 flex flex-col items-center mt-5 lg:mt-0 lg:p-8 lg:h-auto">
                   <h1 className="w-full text-xl text-left font-bold text-primary lg:text-3xl">
                     My Booking
                   </h1>

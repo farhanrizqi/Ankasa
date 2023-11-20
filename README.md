@@ -97,62 +97,22 @@ Ankasa is a web-based project that allows users to search for tickets according 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- Screenshots -->
-
-## Screenshot
-
-| Registration Page      | Login Page             |
-| ---------------------- | ---------------------- |
-| ![Regis.png][ss-regis] | ![Login.png][ss-login] |
-
-|      Home Page       |        Booking Page        |
-| :------------------: | :------------------------: |
-| ![Home.png][ss-home] | ![Booking.png][ss-booking] |
-
-|       Ticket Page        |        Payment Page        |
-| :----------------------: | :------------------------: |
-| ![Ticket.png][ss-ticket] | ![Payment.png][ss-payment] |
-
-|    Detail Flight Page    |
-| :----------------------: |
-| ![Detail.png][ss-detail] |
-
-|  Boarding Pass Page  |
-| :------------------: |
-| ![Pass.png][ss-pass] |
-
-|       Logout Page        |
-| :----------------------: |
-| ![logout.png][ss-logout] |
-
 <!-- GETTING STARTED -->
 
 ## Getting Started
 
 ### Installation
 
-1. Clone the repo
-
-   ```
-   git clone https://github.com/farhanrizqi/Ankasa.git
-
-   ```
+_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
 2. Install NPM packages
    ```
    npm install
    ```
-3. Run the Project
-
-```npm run dev
-
-```
-
-4. Build Project
-
-```npm run build
-
-```
+3. Enter your API in `config.js`
+   ```js
+   const API_KEY = "ENTER YOUR API";
+   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -211,11 +171,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-- Email : [`farhanrizqi.am@gmail.com`](mailto:farhanrizqi.am@gmail.com)
-
-- LinkedIn : [`/in/frzq/`](https://www.linkedin.com/in/frzq/)
-
-- GitHub : [`farhanrizqi`](https://github.com/farhanrizqi)
+Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
 
 Project Link: [https://github.com/farhanrizqi/Ankasa](https://github.com/farhanrizqi/Ankasa)
 
@@ -251,24 +207,9 @@ Project Link: [https://github.com/farhanrizqi/Ankasa](https://github.com/farhanr
 [issues-url]: https://github.com/othneildrew/Best-README-Template/issues
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
-[linkedin-url]: https://www.linkedin.com/in/frzq/
-
-<!-- images section -->
-
-[ss-home]: https://res.cloudinary.com/ddrecezrk/image/upload/v1696487285/ankasa/jsgx4pkufy4ylvlepde0.png
-[ss-booking]: https://res.cloudinary.com/ddrecezrk/image/upload/v1696514716/ankasa/booking_bemr41.png
-[ss-regis]: https://res.cloudinary.com/ddrecezrk/image/upload/v1700486327/ankasa/usg9cmnbvp5e6xr0p79o.png
-[ss-ticket]: https://res.cloudinary.com/ddrecezrk/image/upload/v1696515504/ankasa/ticket_cx5mtc.png
-[ss-pass]: https://res.cloudinary.com/ddrecezrk/image/upload/v1696514715/ankasa/pass_svcphc.png
-[ss-payment]: https://res.cloudinary.com/ddrecezrk/image/upload/v1696514715/ankasa/payment_lhalq3.png
-[ss-profile]: https://res.cloudinary.com/ddrecezrk/image/upload/v1696514715/ankasa/profile_ovp1p4.png
-[ss-detail]: https://res.cloudinary.com/ddrecezrk/image/upload/v1696515504/ankasa/detail_lltkrt.png
-[ss-logout]: https://res.cloudinary.com/ddrecezrk/image/upload/v1696514715/ankasa/logout_l36jsc.png
-[ss-login]: https://res.cloudinary.com/ddrecezrk/image/upload/v1696487283/ankasa/ijfmef1qm6zwsgjpaj6o.png
-
-<!-- built section -->
-
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/othneildrew
+[product-screenshot]: images/screenshot.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB

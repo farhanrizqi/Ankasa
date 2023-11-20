@@ -101,17 +101,21 @@ Ankasa is a web-based project that allows users to search for tickets according 
 
 ## Screenshot
 
-| Home Page            | Login Page             |
-| -------------------- | ---------------------- |
-| ![Home.png][ss-home] | ![Login.png][ss-login] |
+| Registration Page      | Login Page             |
+| ---------------------- | ---------------------- |
+| ![Regis.png][ss-regis] | ![Login.png][ss-login] |
 
-|       Ticket Page        |        Booking Page        |
-| :----------------------: | :------------------------: |
-| ![Ticket.png][ss-ticket] | ![Booking.png][ss-booking] |
+|      Home Page       |        Booking Page        |
+| :------------------: | :------------------------: |
+| ![Home.png][ss-home] | ![Booking.png][ss-booking] |
 
-|    Detail Flight Page    |        Payment Page        |
+|       Ticket Page        |        Payment Page        |
 | :----------------------: | :------------------------: |
-| ![Detail.png][ss-detail] | ![Payment.png][ss-payment] |
+| ![Ticket.png][ss-ticket] | ![Payment.png][ss-payment] |
+
+|    Detail Flight Page    |
+| :----------------------: |
+| ![Detail.png][ss-detail] |
 
 |  Boarding Pass Page  |
 | :------------------: |
@@ -180,7 +184,7 @@ See the [open issues](https://github.com/othneildrew/Best-README-Template/issues
 
 <!-- CONTRIBUTING -->
 
-## Contributing
+<!-- ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -193,7 +197,7 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 <!-- LICENSE -->
 
@@ -207,7 +211,11 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-Farhan Rizqi - [farhanrizqi.am@gmail.com](mailto:farhanrizqi.am@gmail.com)
+- Email : [`farhanrizqi.am@gmail.com`](mailto:farhanrizqi.am@gmail.com)
+
+- LinkedIn : [`/in/frzq/`](https://www.linkedin.com/in/frzq/)
+
+- GitHub : [`farhanrizqi`](https://github.com/farhanrizqi)
 
 Project Link: [https://github.com/farhanrizqi/Ankasa](https://github.com/farhanrizqi/Ankasa)
 
@@ -250,6 +258,7 @@ Project Link: [https://github.com/farhanrizqi/Ankasa](https://github.com/farhanr
 
 [ss-home]: https://res.cloudinary.com/ddrecezrk/image/upload/v1696487285/ankasa/jsgx4pkufy4ylvlepde0.png
 [ss-booking]: https://res.cloudinary.com/ddrecezrk/image/upload/v1696514716/ankasa/booking_bemr41.png
+[ss-regis]: https://res.cloudinary.com/ddrecezrk/image/upload/v1700486327/ankasa/usg9cmnbvp5e6xr0p79o.png
 [ss-ticket]: https://res.cloudinary.com/ddrecezrk/image/upload/v1696515504/ankasa/ticket_cx5mtc.png
 [ss-pass]: https://res.cloudinary.com/ddrecezrk/image/upload/v1696514715/ankasa/pass_svcphc.png
 [ss-payment]: https://res.cloudinary.com/ddrecezrk/image/upload/v1696514715/ankasa/payment_lhalq3.png

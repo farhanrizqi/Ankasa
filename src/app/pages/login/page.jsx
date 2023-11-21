@@ -174,7 +174,7 @@ function Login() {
               </h1>
               <hr className="border-t-2 border-gray-200 w-[80%] my-5" />
               <h1 className="text-md text-gray-600">
-                Don't have an account ?{" "}
+                Don&lsquo;t have an account ?{" "}
                 <Link
                   href="/pages/registration"
                   className="text-blue-500 text-md font-bold hover:underline"

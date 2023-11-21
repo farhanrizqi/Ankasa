@@ -5,9 +5,6 @@ import Image from "next/image";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import Filter from "@/app/components/Filter";
-import garuda from "/public/images/garuda.png";
-import airAsia from "/public/images/airAsia.png";
-import lionAir from "/public/images/lionAir.png";
 import { useRouter } from "next/navigation";
 
 function Tickets() {
@@ -399,7 +396,10 @@ function Tickets() {
                   </div>
                 </div>
                 {flightData.map((flight, index) => (
-                  <div className="bg-white h-auto rounded-2xl mt-4 p-4">
+                  <div
+                    key={flight.code}
+                    className="bg-white h-auto rounded-2xl mt-4 p-4"
+                  >
                     <div className="w-full h-auto ">
                       <div className="flex items-center space-x-10">
                         <Image
@@ -407,6 +407,7 @@ function Tickets() {
                           className=""
                           width={90}
                           height={52}
+                          alt="Image"
                         />
                         <h1 className="text-sm text-seventh">{flight.name}</h1>
                       </div>
@@ -414,7 +415,7 @@ function Tickets() {
                         <div className="flex flex-col  items-center">
                           <div className="flex space-x-5 items-center">
                             <div className="w-full">
-                              <h1 className="font-bold">{flight.from.code}</h1>
+                              <h1 className="font-bold">{flight.from?.code}</h1>
                             </div>
                             <div className="w-full">
                               <svg
@@ -431,7 +432,7 @@ function Tickets() {
                               </svg>
                             </div>
                             <div className="w-full">
-                              <h1 className="font-bold">{flight.to.code}</h1>
+                              <h1 className="font-bold">{flight.to?.code}</h1>
                             </div>
                           </div>
                           <div className="w-full flex space-x-6 items-center justify-start">

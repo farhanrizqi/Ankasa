@@ -13,7 +13,7 @@ import Skeleton from "react-loading-skeleton";
 
 const token = Cookies.get("token");
 
-export default function pass() {
+export default function Pass() {
   const router = useRouter();
   const params = useParams();
   const code = params.code;

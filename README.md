@@ -18,8 +18,8 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-
-[![Contributors][contributors-shield]][contributors-url]
+<!--
+[![Contributors][contributors-shield]][contributors-url] -->
 
 <!-- [![Forks][forks-shield]][forks-url] -->
 
@@ -144,13 +144,15 @@ Ankasa is a web-based project that allows users to search for tickets according 
    ```
 3. Run the Project
 
-```npm run dev
+```
+npm run dev
 
 ```
 
 4. Build Project
 
-```npm run build
+```
+npm run build
 
 ```
 

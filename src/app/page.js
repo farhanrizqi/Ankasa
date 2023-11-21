@@ -31,13 +31,18 @@ export default function Home() {
             <Image
               src={japanAlleyHero}
               className="object-cover object-left h-full"
+              alt="Image"
             />
             <div className="absolute inset-0 bg-black opacity-40"></div>
           </div>
         </div>
         <div className="hidden w-screen h-[80%] lg:flex lg:w-[100%] mt-5">
           <div className="w-[55%] relative flex justify-end overflow-hidden rounded-r-2xl bottom-24">
-            <Image src={japanAlleyHero} className="object-cover h-full" />
+            <Image
+              src={japanAlleyHero}
+              className="object-cover h-full"
+              alt="Image"
+            />
             <div className="absolute inset-0 bg-black opacity-40"></div>
           </div>
           <div className="flex-1 flex justify-center items-center">
@@ -59,7 +64,7 @@ export default function Home() {
         </div>
         <div className="w-screen h-auto lg:w-[100%]">
           <div className="relative h-54 overflow-hidden rounded-b-2xl md:h-80 lg:hidden">
-            <Image src={japanAlleyHero} className="object-cover " />
+            <Image src={japanAlleyHero} className="object-cover " alt="Image" />
             {/* Overlay transparan */}
             <div className="absolute inset-0 bg-black opacity-40"></div>
 
@@ -94,6 +99,7 @@ export default function Home() {
                 <Image
                   src={japanAlley}
                   className="h-full object-cover object-center"
+                  alt="Image"
                 />
                 <div className="absolute inset-0 bg-black opacity-40"></div>
                 <div className="absolute inset-0 flex flex-col justify-end items-start mb-2 ml-2 text-white text-center">
@@ -107,6 +113,7 @@ export default function Home() {
                 <Image
                   src={carouselCity}
                   className="h-full object-cover object-center"
+                  alt="Image"
                 />
                 <div className="absolute inset-0 bg-black opacity-40"></div>
                 <div className="px-5">
@@ -128,6 +135,7 @@ export default function Home() {
                 <Image
                   src={japanAlley}
                   className="h-full object-cover object-center"
+                  alt="Image"
                 />
                 <div className="absolute inset-0 bg-black opacity-40"></div>
 
@@ -142,6 +150,7 @@ export default function Home() {
                 <Image
                   src={carouselCity}
                   className="h-full object-cover object-center"
+                  alt="Image"
                 />
                 <div className="absolute inset-0 bg-black opacity-40"></div>
                 <div className="px-5">
@@ -163,6 +172,7 @@ export default function Home() {
                 <Image
                   src={japanAlley}
                   className="h-full object-cover object-center"
+                  alt="Image"
                 />
                 <div className="absolute inset-0 bg-black opacity-40"></div>
 
@@ -203,6 +213,7 @@ export default function Home() {
                       <Image
                         src={bali}
                         className="h-full object-cover object-center"
+                        alt="Image"
                       />
                     </div>
                   </div>
@@ -216,6 +227,7 @@ export default function Home() {
                       <Image
                         src={singapore}
                         className="h-full object-cover object-center"
+                        alt="Image"
                       />
                     </div>
                   </div>
@@ -229,6 +241,7 @@ export default function Home() {
                       <Image
                         src={agra}
                         className="h-full object-cover object-center"
+                        alt="Image"
                       />
                     </div>
                   </div>
@@ -242,6 +255,7 @@ export default function Home() {
                       <Image
                         src={sydney}
                         className="h-full object-cover object-center"
+                        alt="Image"
                       />
                     </div>
                   </div>

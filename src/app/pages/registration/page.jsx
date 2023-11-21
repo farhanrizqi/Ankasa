@@ -9,7 +9,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import groupAnkasa from "../../../../public/images/groupAnkasa.png";
 
-export default function registration() {
+export default function Registration() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({

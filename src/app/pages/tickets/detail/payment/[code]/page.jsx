@@ -7,7 +7,7 @@ import visa from "@/../../public/images/visa.svg";
 import axios from "axios";
 import { useRouter, useParams } from "next/navigation";
 
-export default function detailTicket() {
+export default function Payment() {
   const router = useRouter();
   const params = useParams();
   const code = params.code;

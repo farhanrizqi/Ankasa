@@ -2,11 +2,11 @@
 import React, { useState } from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import Image from "next/image";
+import Image from "next/image alt='Image'";
 import dummy from "../../../../public/images/dummyImg.jpg";
 import InputForm from "@/app/components/InputForm";
 
-export default function profile() {
+export default function Profile() {
   const [formData, setFormData] = useState({
     fullname: "",
     email: "",
@@ -27,7 +27,12 @@ export default function profile() {
         <div className="Left w-full h-auto bg-white rounded-2xl p-7 flex flex-col items-center lg:w-1/3">
           <div className="flex flex-col items-center gap-4">
             <div className="rounded-full bg-white border-2 border-primary p-2">
-              <Image src={dummy} width={100} className="rounded-full" />
+              <Image
+                src={dummy}
+                width={100}
+                className="rounded-full"
+                alt="Image"
+              />
             </div>
             <button
               className="block flex-1 px-4 py-2  bg-white border border-primary rounded-lg text-primary font-bold hover:text-primary hover:border-primary hover:bg-white"

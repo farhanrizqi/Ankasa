@@ -42,10 +42,10 @@
 
   <p align="center">
     <br />
-    <a href="https://github.com/farhanrizqi/Ankasa"><strong>Explore the docs »</strong></a>
+    <a href="#about-the project"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="">View Demo</a>
+    <a href="https://ankasa-gold.vercel.app/">View Demo</a>
     ·
     <a href="mailto:farhanrizqi.am@gmail.com">Report Bug</a>
     ·

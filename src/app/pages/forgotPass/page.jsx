@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import groupAnkasa from "../../../../public/images/groupAnkasa.png";
 
-export default function ForgotPass() {
+function ForgotPass() {
   const router = useRouter();
   const [formData, setFormData] = useState({
     email: "",
@@ -96,3 +96,5 @@ export default function ForgotPass() {
     </div>
   );
 }
+
+export default ForgotPass;

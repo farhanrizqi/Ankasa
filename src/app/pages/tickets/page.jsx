@@ -10,7 +10,7 @@ import airAsia from "/public/images/airAsia.png";
 import lionAir from "/public/images/lionAir.png";
 import { useRouter } from "next/navigation";
 
-export default function Tickets() {
+function Tickets() {
   const router = useRouter();
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
   const [flightData, setFlightData] = useState([]);
@@ -557,3 +557,5 @@ export default function Tickets() {
     </>
   );
 }
+
+export default Tickets;

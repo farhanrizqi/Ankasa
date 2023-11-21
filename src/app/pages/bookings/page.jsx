@@ -6,7 +6,7 @@ import Image from "next/image alt='Image'";
 import dummy from "../../../../public/images/dummyImg.jpg";
 import InputForm from "@/app/components/InputForm";
 
-export default function Profile() {
+function Bookings() {
   const [formData, setFormData] = useState({
     fullname: "",
     email: "",
@@ -285,3 +285,5 @@ export default function Profile() {
     </div>
   );
 }
+
+export default Bookings;

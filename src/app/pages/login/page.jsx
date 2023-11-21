@@ -10,7 +10,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import groupAnkasa from "../../../../public/images/groupAnkasa.png";
 
-export default function Login() {
+function Login() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
@@ -189,3 +189,5 @@ export default function Login() {
     </div>
   );
 }
+
+export default Login;

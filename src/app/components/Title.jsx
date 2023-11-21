@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-export default function Title() {
+function Title() {
   return (
     <div className="flex items-center">
       <div>
@@ -22,3 +22,5 @@ export default function Title() {
     </div>
   );
 }
+
+export default Title;

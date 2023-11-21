@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
 import Cookies from "js-cookie";
 import axios from "axios";
 
-export default function Profile() {
+function Profile() {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState("MyBooking");
   const token = Cookies.get("token");
@@ -637,3 +637,5 @@ export default function Profile() {
     </div>
   );
 }
+
+export default Profile;

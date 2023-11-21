@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function InputForm({ label, name, type, value, onChange }) {
+function InputForm({ label, name, type, value, onChange }) {
   return (
     <div className="mb-4 ">
       <input
@@ -15,3 +15,5 @@ export default function InputForm({ label, name, type, value, onChange }) {
     </div>
   );
 }
+
+export default InputForm;

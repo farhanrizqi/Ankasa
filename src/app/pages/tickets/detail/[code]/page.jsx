@@ -16,7 +16,7 @@ import countryData from "../../../../data/Country";
 
 const token = Cookies.get("token");
 
-export default function DetailTicket() {
+function DetailTicket() {
   const router = useRouter();
   const params = useParams();
   const code = params.code;
@@ -1128,3 +1128,5 @@ export default function DetailTicket() {
     </>
   );
 }
+
+export default DetailTicket;

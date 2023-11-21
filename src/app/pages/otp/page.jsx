@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import groupAnkasa from "../../../../public/images/groupAnkasa.png";
 
-export default function Otp() {
+function Otp() {
   const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
@@ -91,3 +91,5 @@ export default function Otp() {
     </div>
   );
 }
+
+export default Otp;

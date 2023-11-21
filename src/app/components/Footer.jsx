@@ -4,7 +4,7 @@ import gplay from "../../../public/images/gplay.png";
 import appStore from "../../../public/images/app-store.png";
 import Image from "next/image";
 
-export default function Footer() {
+function Footer() {
   return (
     <>
       <div className="py-10 md:flex  lg:w-[100%]">
@@ -213,3 +213,5 @@ export default function Footer() {
     </>
   );
 }
+
+export default Footer;

@@ -13,7 +13,7 @@ import leftArrow from "/public/images/leftArrow.svg";
 import rightArrow from "/public/images/rightArrow.svg";
 import Link from "next/link";
 
-export default function Home() {
+function Home() {
   return (
     <>
       <Navbar />
@@ -392,3 +392,5 @@ export default function Home() {
     // </main>
   );
 }
+
+export default Home;

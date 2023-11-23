@@ -140,20 +140,20 @@ Before going to the installation stage there are some software that must be inst
 
 1. Clone the repo
 
-   ```
-   git clone https://github.com/farhanrizqi/Ankasa.git
-
-   ```
+```
+git clone https://github.com/farhanrizqi/Ankasa.git
+```
 
 2. Install NPM packages
-   ```
-   npm install
-   ```
+
+```
+npm install
+```
+
 3. Run the Project
 
 ```
-npm run dev
-
+ npm run dev
 ```
 
 4. Build Project
